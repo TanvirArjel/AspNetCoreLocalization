@@ -27,7 +27,11 @@ namespace AspNetCoreLocalization
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddControllersWithViews()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization();
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResource)); // <-- ShareResource is an empty class in the project's root directory.
+                });
 
             services.Configure<RequestLocalizationOptions>(options =>
             {

@@ -30,6 +30,17 @@ namespace AspNetCoreLocalization.Controllers
             return View();
         }
 
+        public IActionResult CreateEmployee()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateEmployee(EmployeeViewModel employeeViewModel)
+        {
+            return View(employeeViewModel);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

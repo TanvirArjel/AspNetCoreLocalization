@@ -25,12 +25,17 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">
-                                @Localizer["HomeLinkLevel"] <span class="sr-only">(current)</span>
+                                @Localizer["Home"] <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Privacy">
-                                @Localizer["PrivacyLinkLevel"]
+                                @Localizer["Privacy"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="CreateEmployee">
+                                @Localizer["Create Employee"]
                             </a>
                         </li>
                     </ul>
